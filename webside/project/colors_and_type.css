@@ -1,0 +1,148 @@
+/* ============================================================
+   NASAMAT · نَسَمَات — Design Tokens
+   Colors & Typography foundation
+   Load Google Fonts before this file (see fonts note in README).
+   @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@200..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..700&family=Montserrat:wght@300;400;500;600;700&display=swap');
+   ============================================================ */
+
+:root {
+  /* ---- Brand palette (the only approved colors) ---- */
+  --gold:          #B68A35;  /* Nasamat Gold — logo, links, accents, "a touch not an area" */
+  --gold-dark:     #8C6A26;  /* Dark Gold — shadows, secondary headings, hover */
+  --charcoal:      #1A1A1A;  /* Charcoal — dark backgrounds, primary text */
+  --ivory:         #F7F3EC;  /* Ivory Cream — light backgrounds, packaging */
+  --grey:          #595959;  /* Refined Grey — secondary text */
+
+  /* ---- Derived / support tones (kept inside the family) ---- */
+  --gold-soft:     #D9CDB5;  /* hairline borders on light, ornament tint */
+  --gold-wash:     #EFE7D5;  /* faint gold tint fill / hover on ivory */
+  --charcoal-2:    #262626;  /* raised surface on dark */
+  --charcoal-3:    #333333;  /* border on dark */
+  --ivory-2:       #FBF9F4;  /* lightest surface */
+  --ivory-3:       #EFE9DD;  /* sunken surface on light */
+  --cream-text:    #E8E2D6;  /* primary text ON charcoal */
+  --grey-2:        #888888;  /* tertiary text / captions */
+  --grey-3:        #B8B0A2;  /* muted text on dark */
+
+  /* ---- Semantic surface / text roles (light (default) theme) ---- */
+  --bg:            var(--ivory);
+  --bg-raised:     var(--ivory-2);
+  --bg-sunken:     var(--ivory-3);
+  --fg1:           var(--charcoal);   /* primary text */
+  --fg2:           var(--grey);       /* secondary text */
+  --fg3:           var(--grey-2);     /* tertiary / captions */
+  --accent:        var(--gold);
+  --accent-press:  var(--gold-dark);
+  --border:        var(--gold-soft);
+  --border-strong: #C9BB9E;
+  --hairline:      rgba(26,26,26,0.08);
+
+  /* ---- Type families ---- */
+  --font-ar-display: 'Amiri', 'Times New Roman', serif;        /* Arabic headings / logo */
+  --font-ar-body:    'Cairo', 'Segoe UI', sans-serif;          /* Arabic body */
+  --font-display:    'Playfair Display', 'Georgia', serif;     /* Latin headings */
+  --font-body:       'Montserrat', system-ui, sans-serif;      /* Latin body & labels */
+  --font-mono:       'IBM Plex Mono', ui-monospace, monospace; /* tokens / code only */
+
+  /* ---- Type scale (Latin defaults; px @ 1rem=16px) ---- */
+  --t-display:  clamp(48px, 7vw, 88px);  /* hero */
+  --t-h1:       clamp(36px, 5vw, 56px);
+  --t-h2:       clamp(28px, 3.4vw, 40px);
+  --t-h3:       24px;
+  --t-title:    20px;
+  --t-body:     16px;
+  --t-small:    14px;
+  --t-caption:  12px;
+  --t-overline: 12px;   /* used with wide tracking, uppercase */
+
+  /* ---- Tracking ---- */
+  --track-overline: 0.22em;  /* NASAMAT lockup, eyebrows, labels */
+  --track-label:    0.08em;
+  --track-tight:    -0.01em;
+
+  /* ---- Weights ---- */
+  --w-light: 300;
+  --w-reg:   400;
+  --w-med:   500;
+  --w-semi:  600;
+  --w-bold:  700;
+
+  /* ---- Line heights ---- */
+  --lh-tight: 1.12;
+  --lh-snug:  1.3;
+  --lh-body:  1.65;
+
+  /* ---- Spacing scale (8pt base) ---- */
+  --s-1: 4px;  --s-2: 8px;  --s-3: 12px; --s-4: 16px;
+  --s-5: 24px; --s-6: 32px; --s-7: 48px; --s-8: 64px;
+  --s-9: 96px; --s-10: 128px;
+
+  /* ---- Radii (restrained, never playful) ---- */
+  --r-xs: 2px;
+  --r-sm: 4px;
+  --r-md: 8px;
+  --r-lg: 12px;
+  --r-pill: 999px;
+
+  /* ---- Shadows — soft, warm, low. Luxury = restraint ---- */
+  --shadow-xs: 0 1px 2px rgba(26,26,26,0.05);
+  --shadow-sm: 0 2px 8px rgba(26,26,26,0.06);
+  --shadow-md: 0 8px 28px rgba(26,26,26,0.10);
+  --shadow-lg: 0 20px 60px rgba(26,26,26,0.14);
+  --shadow-gold: 0 6px 20px rgba(182,138,53,0.22);
+
+  /* ---- Motion ---- */
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);   /* calm, no bounce */
+  --dur-fast: 160ms;
+  --dur:      260ms;
+  --dur-slow: 480ms;
+}
+
+/* ============================================================
+   Dark theme role overrides — apply on .on-charcoal / [data-theme="dark"]
+   ============================================================ */
+.on-charcoal, [data-theme="dark"] {
+  --bg:            var(--charcoal);
+  --bg-raised:     var(--charcoal-2);
+  --bg-sunken:     #121212;
+  --fg1:           var(--cream-text);
+  --fg2:           var(--grey-3);
+  --fg3:           var(--grey-2);
+  --border:        var(--charcoal-3);
+  --border-strong: #4A4A4A;
+  --hairline:      rgba(232,226,214,0.10);
+}
+
+/* ============================================================
+   Semantic element styles — opt-in via classes (no global reset)
+   ============================================================ */
+.nsm-display { font-family: var(--font-display); font-weight: var(--w-med);
+  font-size: var(--t-display); line-height: var(--lh-tight); letter-spacing: var(--track-tight);
+  color: var(--fg1); }
+.nsm-h1 { font-family: var(--font-display); font-weight: var(--w-med);
+  font-size: var(--t-h1); line-height: var(--lh-tight); color: var(--fg1); }
+.nsm-h2 { font-family: var(--font-display); font-weight: var(--w-med);
+  font-size: var(--t-h2); line-height: var(--lh-snug); color: var(--fg1); }
+.nsm-h3 { font-family: var(--font-body); font-weight: var(--w-semi);
+  font-size: var(--t-h3); line-height: var(--lh-snug); color: var(--fg1); }
+.nsm-eyebrow { font-family: var(--font-body); font-weight: var(--w-semi);
+  font-size: var(--t-overline); letter-spacing: var(--track-overline);
+  text-transform: uppercase; color: var(--accent); }
+.nsm-body { font-family: var(--font-body); font-weight: var(--w-reg);
+  font-size: var(--t-body); line-height: var(--lh-body); color: var(--fg2); }
+.nsm-small { font-family: var(--font-body); font-weight: var(--w-reg);
+  font-size: var(--t-small); line-height: 1.5; color: var(--fg2); }
+.nsm-caption { font-family: var(--font-body); font-weight: var(--w-reg);
+  font-size: var(--t-caption); letter-spacing: var(--track-label); color: var(--fg3); }
+
+/* Arabic — set dir="rtl" on the element/container */
+.nsm-ar-display { font-family: var(--font-ar-display); font-weight: var(--w-bold);
+  font-size: var(--t-h1); line-height: 1.35; color: var(--fg1); direction: rtl; }
+.nsm-ar-body { font-family: var(--font-ar-body); font-weight: var(--w-reg);
+  font-size: var(--t-body); line-height: 1.9; color: var(--fg2); direction: rtl; }
+
+/* Logo lockups */
+.nsm-logo-ar { font-family: var(--font-ar-display); font-weight: var(--w-bold);
+  color: var(--gold); direction: rtl; line-height: 1; }
+.nsm-logo-latin { font-family: var(--font-body); font-weight: var(--w-med);
+  letter-spacing: var(--track-overline); text-transform: uppercase; color: var(--gold); }

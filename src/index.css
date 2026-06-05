@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--ivory, #F7F3EC);
+  color: var(--fg1, #1A1A1A);
+  font-family: var(--font-ar-body, 'Cairo', 'Segoe UI', sans-serif);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+@layer components {
+  .wrap {
+    @apply max-w-6xl mx-auto px-5 md:px-12;
+  }
+
+  .section {
+    @apply py-16 md:py-20 lg:py-32;
+  }
+
+  .eyebrow {
+    @apply font-body font-semibold text-overline tracking-overline uppercase text-gold inline-flex items-center gap-3;
+  }
+
+  .eyebrow.centered {
+    @apply justify-center;
+  }
+}
+
+/* Scroll reveal animation helper */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
