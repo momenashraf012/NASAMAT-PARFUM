@@ -300,6 +300,15 @@ export function CheckoutPage() {
             <div className="bg-white border border-gold-soft rounded-lg p-6 sticky top-20 space-y-4">
               <h3 className="font-ar-display font-bold text-xl text-charcoal">ملخص الطلب</h3>
 
+              <div className="rounded-lg border border-gold-soft bg-gold-wash p-4 space-y-2">
+                <p className="font-ar-body text-sm text-charcoal font-semibold">
+                  شحن مجاني فوق 1500 جنيه
+                </p>
+                <p className="font-ar-body text-xs text-grey leading-relaxed">
+                  الدفع آمن، والتغليف مناسب مباشرة كهدية، مع خطوات طلب واضحة.
+                </p>
+              </div>
+
               <div className="max-h-64 overflow-y-auto space-y-3 py-4 border-y border-gold-soft">
                 {items.map((item) => (
                   <div key={item.id} className="flex justify-between items-start gap-2">

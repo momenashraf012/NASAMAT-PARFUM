@@ -5,6 +5,7 @@ import { Announcement } from '../components/Announcement'
 import { Footer } from '../components/Footer'
 import { Header } from '../components/Header'
 import { PERFUMES } from '../data/perfumes'
+import { TrustStrip } from '../components/TrustStrip'
 import { useCart } from '../context/CartContext'
 import { useReviews } from '../context/ReviewsContext'
 import { useToast } from '../hooks/useToast'
@@ -251,6 +252,31 @@ export function ProductDetailsPage() {
                       مشاركة
                     </button>
                   </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-8 mb-16">
+              <TrustStrip />
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="rounded-lg border border-gold-soft bg-ivory-2 p-5">
+                  <p className="font-ar-body font-semibold text-charcoal">شحن واضح</p>
+                  <p className="font-ar-body text-sm text-grey mt-2 leading-relaxed">
+                    شحن مجاني للطلبات المؤهلة فوق 1500 جنيه، مع متابعة سهلة للطلب.
+                  </p>
+                </div>
+                <div className="rounded-lg border border-gold-soft bg-ivory-2 p-5">
+                  <p className="font-ar-body font-semibold text-charcoal">تغليف جاهز للإهداء</p>
+                  <p className="font-ar-body text-sm text-grey mt-2 leading-relaxed">
+                    كل طلب يخرج بمظهر مرتب ومناسب للتقديم كهدية من أول لحظة.
+                  </p>
+                </div>
+                <div className="rounded-lg border border-gold-soft bg-ivory-2 p-5">
+                  <p className="font-ar-body font-semibold text-charcoal">اختيار ثابت</p>
+                  <p className="font-ar-body text-sm text-grey mt-2 leading-relaxed">
+                    نفس الروح الفاخرة في كل عطر: عود، مسك، ورد، وعنبر متوازن.
+                  </p>
                 </div>
               </div>
             </div>
